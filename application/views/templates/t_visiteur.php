@@ -1,6 +1,6 @@
 ﻿<?php
-	$this->load->helper('url');
-	$v_path = base_url('application/views');
+$this->load->helper('url');
+$v_path = base_url('application/views');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -12,7 +12,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<link href="<?php echo $v_path.'/templates/css/styles.css'?>" rel="stylesheet" type="text/css" />
 
-		<script language="JavaScript">
+		<script type="text/javascript">
 			function hideNotify() {
 				document.getElementById("notify").style.display = "none";
 			}
@@ -35,17 +35,17 @@
 				
 				<ul id="menuList">
 					<li>
-						Visiteur :<br/>
+						Visiteur :
 						<?php echo $this->session->userdata('prenom')."  ".$this->session->userdata('nom');  ?>
 					</li>
-					<br/>
+					
 					<li class="smenu">
 						<?php echo anchor('c_visiteur/', 'Accueil', 'title="Page d\'accueil"'); ?>
 					</li>
 					<li class="smenu">
 						<?php echo anchor('c_visiteur/mesFiches', 'Mes fiches de frais', 'title="Consultation de mes fiches de frais"'); ?>
 					</li>
-					<br/>
+					
 					<li class="smenu">
 						<?php echo anchor('c_visiteur/deconnecter', 'Se déconnecter', 'title="Déconnexion"'); ?>
 					</li>
@@ -56,6 +56,11 @@
 			<?php echo $body; ?>
 
 			<div id="pied">
+				<p>
+					<a href="http://validator.w3.org/check?uri=referer">
+						<img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+					</a>
+				</p>
 				<br/>
 			</div>
 
@@ -63,5 +68,3 @@
 
 	</body>
 </html>
-
-	  
