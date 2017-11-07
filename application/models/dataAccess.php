@@ -13,16 +13,26 @@ class DataAccess extends CI_Model {
     }
 
     /**
+<<<<<<< HEAD
 	 * Retourne les informations d'un visiteur
+=======
+	 * Retourne les informations d'un utilisateur
+>>>>>>> cd5726c1501dd3991b80db20f2baf4feb9452f09
 	 *
 	 * @param $login
 	 * @param $mdp
 	 * @return l'id, le nom et le prénom sous la forme d'un tableau associatif
 	*/
 	public function getInfosVisiteur($login, $mdp){
+<<<<<<< HEAD
 		$req = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom, visiteur.statut as statut 
 				from visiteur
 				where visiteur.login=? and visiteur.mdp=?";
+=======
+		$req = "select utilisateur.id as id, utilisateur.nom as nom, utilisateur.prenom as prenom, utilisateur.statut as statut
+				from utilisateur
+				where utilisateur .login=? and utilisateur .mdp=?";
+>>>>>>> cd5726c1501dd3991b80db20f2baf4feb9452f09
 		$rs = $this->db->query($req, array ($login, $mdp));
 		$ligne = $rs->first_row('array');
 		return $ligne;
@@ -43,8 +53,12 @@ class DataAccess extends CI_Model {
 
 		$req = "select *
 				from lignefraishorsforfait
+<<<<<<< HEAD
 				where lignefraishorsforfait.idvisiteur ='$idVisiteur'
 					and lignefraishorsforfait.mois = '$mois' ";
+=======
+				where lignefraishorsforfait.idvisiteur ='$idVisiteur' and lignefraishorsforfait.mois = '$mois' ";
+>>>>>>> cd5726c1501dd3991b80db20f2baf4feb9452f09
 		$rs = $this->db->query($req);
 		$lesLignes = $rs->result_array();
 		$nbLignes = $rs->num_rows();
