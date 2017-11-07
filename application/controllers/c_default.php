@@ -25,14 +25,10 @@ class C_default extends CI_Controller {
 			$data = array();
 			$this->templates->load('t_connexion', 'v_connexion', $data);
 		}
-		else if ($login == "jmartin") {
-			$this->load->helper('url');
-			redirect('/c_comptable/');
-		}
 		else
 		{
 			$this->load->helper('url');
-			redirect('/c_visiteur/');
+			redirect('/c_comptable/');
 		}
 	}
 
