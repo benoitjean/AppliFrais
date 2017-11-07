@@ -2,7 +2,7 @@
 	<h2>Gestion des frais des visiteurs</h2>
 	<p>Bienvenue dans votre application de gestion des frais de déplacements.</p>
 	<p>
-		Afin de couvrir les frais que vous avez engagés lors de vos déplacements professionnels, vous devez compléter des fiches de frais mensuelles.
+		Afin de rembource nos visiteur vous devez confirmer leurs fiche de frais.
 	</p>
 		<ul>
 			<li>Une fiche de frais court du 1er au dernier jour du mois;</li>
