@@ -19,7 +19,6 @@ class C_default extends CI_Controller {
 	{
 		$this->load->model('authentif');
 
-
 		if (!$this->authentif->estConnecte())
 		{
 			$data = array();
@@ -28,7 +27,7 @@ class C_default extends CI_Controller {
 		else
 		{
 			$this->load->helper('url');
-			redirect('/c_comptable/');
+			redirect('/c_visiteur/');
 		}
 	}
 
