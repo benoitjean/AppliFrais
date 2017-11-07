@@ -18,7 +18,7 @@ class C_default extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('authentif');
-		$login = $this->input->post('login');
+		
 
 		if (!$this->authentif->estConnecte())
 		{
