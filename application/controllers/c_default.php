@@ -17,6 +17,7 @@
                               public function index($statut = null)
                                {
                                 	$this->load->model('authentif');
+																	*$statut=$authUser['statut'];
                                   if (!$this->authentif->estConnecte())
                                		{
                                   	$data = array();
@@ -40,7 +41,7 @@
                               */
                               public function connecter ()
                               {
-                                // TODO : conrôler que l'obtention des données postées ne rend pas d'erreurs
+                                // TODO : contrôler que l'obtention des données postées ne rend pas d'erreurs
                                 $this->load->model('authentif');
                                 $login = $this->input->post('login');
                                 $mdp = $this->input->post('mdp');

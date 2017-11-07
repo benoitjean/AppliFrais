@@ -26,7 +26,7 @@ class A_comptable extends CI_Model {
 		// obtention de la liste des 6 derniers mois (y compris celui ci)
 		$lesMois = $this->functionsLib->getSixDerniersMois();
 
-		// obtention de l'id de l'utilisateur mémorisé en session
+		// obtention de l'id de l'visiteur mémorisé en session
 		$idComptable = $this->session->userdata('idUser');
 
 		// contrôle de l'existence des 6 dernières fiches et création si nécessaire
@@ -34,15 +34,15 @@ class A_comptable extends CI_Model {
 			if(!$this->dataAccess->ExisteFiche($idComptable, $unMois)) $this->dataAccess->creeFiche($idComptable, $unMois);
 		}
 		// envoie de la vue accueil du visiteur
-		$this->templates->load('t_comptable', 'v_coAccueil');
+		$this->templates->load('t_comptable', 'v_visAccueil');
 	}
 
 	/**
 	 * Liste les fiches existantes du visiteur connecté et
 	 * donne accès aux fonctionnalités associées
 	 *
-	 * @param $idComptable : l'id du visiteur
-	 * @param $message : message facultatif destiné à notifier l'utilisateur du résultat d'une action précédemment exécutée
+	 * @param $idVisiteur : l'id du visiteur
+	 * @param $message : message facultatif destiné à notifier l'visiteur du résultat d'une action précédemment exécutée
 	*/
 	public function mesFiches ($idComptable, $message=null)
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
@@ -57,7 +57,7 @@ class A_comptable extends CI_Model {
 	/**
 	 * Présente le détail de la fiche sélectionnée
 	 *
-	 * @param $idComptable : l'id du visiteur
+	 * @param $idVisiteur : l'id du visiteur
 	 * @param $mois : le mois de la fiche à modifier
 	*/
 	public function voirFiche($idComptable, $mois)
@@ -75,9 +75,9 @@ class A_comptable extends CI_Model {
 	 * Présente le détail de la fiche sélectionnée et donne
 	 * accés à la modification du contenu de cette fiche.
 	 *
-	 * @param $idComptable : l'id du visiteur
+	 * @param $idVisiteur : l'id du visiteur
 	 * @param $mois : le mois de la fiche à modifier
-	 * @param $message : message facultatif destiné à notifier l'utilisateur du résultat d'une action précédemment exécutée
+	 * @param $message : message facultatif destiné à notifier l'visiteur du résultat d'une action précédemment exécutée
 	*/
 	public function modFiche($idComptable, $mois, $message=null)
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
@@ -94,7 +94,7 @@ class A_comptable extends CI_Model {
 	/**
 	 * Signe une fiche de frais en changeant son état
 	 *
-	 * @param $idComptable : l'id du visiteur
+	 * @param $idVisiteur : l'id du visiteur
 	 * @param $mois : le mois de la fiche à signer
 	*/
 	public function signeFiche($idComptable, $mois)
@@ -107,7 +107,7 @@ class A_comptable extends CI_Model {
 	/**
 	 * Modifie les quantités associées aux frais forfaitisés dans une fiche donnée
 	 *
-	 * @param $idComptable : l'id du visiteur
+	 * @param $idVisiteur : l'id du visiteur
 	 * @param $mois : le mois de la fiche concernée
 	 * @param $lesFrais : les quantités liées à chaque type de frais, sous la forme d'un tableau
 	*/
@@ -122,7 +122,7 @@ class A_comptable extends CI_Model {
 	/**
 	 * Ajoute une ligne de frais hors forfait dans une fiche donnée
 	 *
-	 * @param $idComptable : l'id du visiteur
+	 * @param $idVisiteur : l'id du visiteur
 	 * @param $mois : le mois de la fiche concernée
 	 * @param $lesFrais : les quantités liées à chaque type de frais, sous la forme d'un tableau
 	*/
@@ -140,7 +140,7 @@ class A_comptable extends CI_Model {
 	/**
 	 * Supprime une ligne de frais hors forfait dans une fiche donnée
 	 *
-	 * @param $idComptable : l'id du visiteur
+	 * @param $idVisiteur : l'id du visiteur
 	 * @param $mois : le mois de la fiche concernée
 	 * @param $idLigneFrais : l'id de la ligne à supprimer
 	*/
