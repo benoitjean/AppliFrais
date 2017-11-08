@@ -17,7 +17,7 @@
                               public function index($statut = null)
                                {
                                 	$this->load->model('authentif');
-																	*$statut=$authUser['statut'];
+																	$statut=$authUser['statut'];
                                   if (!$this->authentif->estConnecte())
                                		{
                                   	$data = array();
