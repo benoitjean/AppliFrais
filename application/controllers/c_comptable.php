@@ -18,7 +18,7 @@ class C_comptable extends CI_Controller {
 	{
 		// chargement du modèle d'authentification
 		$this->load->model('authentif');
-
+		$statut = $this->session->userdata('statut');
 		// contrôle de la bonne authentification de le comptable
 		if (!$this->authentif->estConnecte())
 		{
@@ -26,7 +26,7 @@ class C_comptable extends CI_Controller {
 			$data = array();
 			$this->templates->load('t_connexion', 'v_connexion', $data);
 		}
-		else
+		elseif( $statut == 'comptable')
 		{
 			// Aiguillage selon l'action demandée
 			// CI a traité l'URL au préalable de sorte à toujours renvoyer l'action "index"
@@ -162,6 +162,9 @@ class C_comptable extends CI_Controller {
 			{
 				show_404();
 			}
+		}
+		else{
+			show_404();
 		}
 	}
 }
