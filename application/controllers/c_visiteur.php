@@ -18,7 +18,7 @@ class C_visiteur extends CI_Controller {
 	{
 		// chargement du modèle d'authentification
 		$this->load->model('authentif');
-		$statut = $this->session->userdata('statut');
+		$statut=$this->session->userdata('statut');
 		// contrôle de la bonne authentification de l'visiteur
 		if (!$this->authentif->estConnecte())
 		{
@@ -26,7 +26,7 @@ class C_visiteur extends CI_Controller {
 			$data = array();
 			$this->templates->load('t_connexion', 'v_connexion', $data);
 		}
-		elseif( $statut == 'visiteur')
+		elseif($statut == 'visiteur')
 		{
 			// Aiguillage selon l'action demandée
 			// CI a traité l'URL au préalable de sorte à toujours renvoyer l'action "index"
