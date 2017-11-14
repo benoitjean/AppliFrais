@@ -24,7 +24,7 @@ class C_visiteur extends CI_Controller {
 			// l'visiteur n'est pas authentifié, on envoie la vue de connexion
 			$data = array();
 			$this->templates->load('t_connexion', 'v_connexion', $data);
-		}
+		} 
 		else
 		{
 			// Aiguillage selon l'action demandée

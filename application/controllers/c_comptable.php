@@ -26,7 +26,7 @@ class C_comptable extends CI_Controller {
 			$data = array();
 			$this->templates->load('t_connexion', 'v_connexion', $data);
 		}
-		else
+		else 
 		{
 			// Aiguillage selon l'action demandée
 			// CI a traité l'URL au préalable de sorte à toujours renvoyer l'action "index"
