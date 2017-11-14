@@ -19,7 +19,6 @@ class C_visiteur extends CI_Controller {
 		// chargement du modèle d'authentification
 		$this->load->model('authentif');
 		$statut=$this->session->userdata('statut');
-		
 		// contrôle de la bonne authentification de l'visiteur
 		if (!$this->authentif->estConnecte())
 		{
@@ -163,6 +162,9 @@ class C_visiteur extends CI_Controller {
 			{
 				show_404();
 			}
+		}
+		else{
+			show_404();
 		}
 	}
 }
