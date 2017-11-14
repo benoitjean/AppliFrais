@@ -163,6 +163,7 @@ class C_comptable extends CI_Controller {
 			{
 				show_404();
 			}
+			
 		}
 	}
 }
