@@ -18,6 +18,10 @@ class C_visiteur extends CI_Controller {
 	{
 		// chargement du modèle d'authentification
 		$this->load->model('authentif');
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4487d9ebb5cf936e806fdffa9cf500ae999e9a42
 		// contrôle de la bonne authentification de l'visiteur
 		if (!$this->authentif->estConnecte())
 		{
