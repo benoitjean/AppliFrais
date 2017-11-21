@@ -7,7 +7,7 @@
 	</p>
 		<ul>
 			<li>Les fiches de frais sont redirig� automatiquement par l'application;</li>
-			<li>Vous confirmere les fiches de frais a votre rythme;</li>
+			<li>Vous confirmerez les fiches de frais a votre rythme;</li>
 		</ul>
 
 
