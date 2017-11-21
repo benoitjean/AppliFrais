@@ -1,5 +1,9 @@
 <div id="contenu">
+
 	<h2>Vous etes connecté en tant que comptable</h2>
+		<style>
+		body {background-color: #E0D9EC;}
+		</style>
 	<h2>Gestion des frais des visiteurs</h2>
 	<p>Bienvenue dans votre application de gestion des frais de déplacements.</p>
 	<p>

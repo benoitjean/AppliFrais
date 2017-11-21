@@ -65,7 +65,11 @@ body{
 html>body #contenu{
   height:auto;
 }
+<<<<<<< HEAD
+ 
+=======
 
+>>>>>>> 6bcb40b2d35066356a810c1ba211b88f6fa384a4
 /* style � appliquer � la balise ul d'identifiant menulist */
 ul#menuList{
     list-style:none;
