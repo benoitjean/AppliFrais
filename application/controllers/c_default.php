@@ -14,8 +14,9 @@
                              * Soit elle existe et on redirige vers le contrôleur de VISITEUR,
                              * soit elle n'existe pas et on envoie la vue de connexion
                              */
-                              public function index($statut = null)
+                              public function index()
                                {
+                                 $statut = $this->session->userdata('statut');
                                 	$this->load->model('authentif');
                                   if (!$this->authentif->estConnecte())
                                		{
@@ -53,7 +54,7 @@
                                 else
                                 {
                                   $this->authentif->connecter($authUser['id'], $authUser['nom'], $authUser['prenom'], $authUser['statut']);
-                                  $this->index($authUser['statut']);
+                                  $this->index();
                                 }
                             }
                        }
