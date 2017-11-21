@@ -10,7 +10,7 @@
 		Afin de rembource nos visiteur vous devez confirmer leurs fiche de frais.
 	</p>
 		<ul>
-			<li>Les fiches de frais sont redirig� automatiquement par l'application;</li>
+			<li>Les fiches de frais sont redirigées automatiquement par l'application;</li>
 			<li>Vous confirmerez les fiches de frais a votre rythme;</li>
 		</ul>
 
