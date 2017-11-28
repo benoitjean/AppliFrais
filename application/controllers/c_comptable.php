@@ -33,7 +33,7 @@ class C_comptable extends CI_Controller {
 		else 
 =======
 
-		elseif($this->session->userdata('statut')!= 'comptable')
+		elseif($this->session->userdata('statut')!= 'comptable') 
 		{
 			$this->load->helper('url');
 			redirect('/c_default/');
