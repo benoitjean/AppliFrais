@@ -19,9 +19,10 @@
 		<tbody>
 
 		<?php
+		foreach( $mesFiches as $uneFiche)
+		{
 		if ($uneFiche['id'] == 'CR') {
-			foreach( $mesFiches as $uneFiche)
-			{
+			
 
 				echo
 				'<tr>
