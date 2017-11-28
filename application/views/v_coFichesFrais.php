@@ -9,10 +9,10 @@
 	<table class="listeLegere">
 		<thead>
 			<tr>
-				<th >Auteur</th>
+				<th>Voir fiche</th>
+				<th >Nom Prenom</th>
 				<th >Montant</th>
 				<th >Date valid.</th>
-				<th  colspan="4">Actions</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -25,16 +25,15 @@
 
 				
 				if ($uneFiche['id'] == 'CL') {
-
-
 				echo
 				'<tr>
 					
 
-					<td class="Auteur">'.$uneFiche['nom'].'</td>
+					<td class="date">'.anchor('c_comptable/voirFiche/'.$uneFiche['mois'], $uneFiche['mois'],  'title="Consulter la fiche"').'</td>
+					<td class="libelle">'.$uneFiche['idVisiteur'].'</td>
 					<td class="Montant">'.$uneFiche['montantValide'].'</td>
+
 					<td class="date">'.$uneFiche['dateModif'].'</td>
-					<td class="action">'.$modLink.'</td>
 
 
 
