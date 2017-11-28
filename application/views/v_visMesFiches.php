@@ -19,9 +19,15 @@
 		<tbody>
 
 		<?php
-		if ($uneFiche['id'] == 'CR') {
 			foreach( $mesFiches as $uneFiche)
 			{
+				$modLink = '';
+				$signeLink = '';
+
+				if ($uneFiche['id'] == 'CR') {
+					$modLink = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'modifier',  'title="Modifier la fiche"');
+					$signeLink = anchor('c_visiteur/signeFiche/'.$uneFiche['mois'], 'signer',  'title="Signer la fiche"  onclick="return confirm(\'Voulez-vous vraiment signer cette fiche ?\');"');
+				}
 
 				echo
 				'<tr>
