@@ -19,15 +19,16 @@
 		<tbody>
 
 		<?php
-<<<<<<< HEAD
 		foreach( $mesFiches as $uneFiche)
 		{
-		if ($uneFiche['id'] == 'CR') {
-			
-			foreach( $mesFiches as $uneFiche)
-			{
+
 				$modLink = '';
 				$signeLink = '';
+
+		
+			
+			
+				
 
 				if ($uneFiche['id'] == 'CR') {
 					$modLink = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'modifier',  'title="Modifier la fiche"');
@@ -43,7 +44,7 @@
 					<td class="action">'.$modLink.'</td>
 					<td class="action">'.$signeLink.'</td>
 				</tr>';
-			}
+			
 		}
 		?>
 		</tbody>
