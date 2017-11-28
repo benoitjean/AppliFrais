@@ -2,17 +2,16 @@
 	$this->load->helper('url');
 ?>
 <div id="contenu">
-	<h2>Liste de mes fiches de frais</h2>
+	<h2>Liste des fiches de frais validées</h2>
 
 	<?php if(!empty($notify)) echo '<p id="notify" >'.$notify.'</p>';?>
 
 	<table class="listeLegere">
 		<thead>
 			<tr>
-				<th >Mois</th>
-				<th >Etat</th>
+				<th >Auteur</th>
 				<th >Montant</th>
-				<th >Date modif.</th>
+				<th >Date valid.</th>
 				<th  colspan="4">Actions</th>
 			</tr>
 		</thead>
@@ -24,7 +23,7 @@
 				$modLink = '';
 				$signeLink = '';
 
-				if ($uneFiche['id'] == 'CR') {
+				if ($uneFiche['id'] == 'CL') {
 					$modLink = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'modifier',  'title="Modifier la fiche"');
 					$signeLink = anchor('c_visiteur/signeFiche/'.$uneFiche['mois'], 'signer',  'title="Signer la fiche"  onclick="return confirm(\'Voulez-vous vraiment signer cette fiche ?\');"');
 				}
