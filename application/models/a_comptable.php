@@ -34,7 +34,7 @@ class A_comptable extends CI_Model {
 			if(!$this->dataAccess->ExisteFiche($idComptable, $unMois)) $this->dataAccess->creeFiche($idComptable, $unMois);
 		}
 		// envoie de la vue accueil du visiteur
-		$this->templates->load('t_comptable', 'v_visAccueil');
+		$this->templates->load('t_comptable', 'v_coAccueil');
 	}
 
 	/**
@@ -50,7 +50,7 @@ class A_comptable extends CI_Model {
 		$idComptable = $this->session->userdata('idUser');
 
 		$data['notify'] = $message;
-		$data['mesFiches'] = $this->dataAccess->getFiches($idComptable);
+		$data['mesFiches'] = $this->dataAccess->getFichesComptable($idComptable);
 		$this->templates->load('t_comptable', 'v_visMesFiches', $data);
 	}
 

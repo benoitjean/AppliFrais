@@ -24,7 +24,16 @@ class C_visiteur extends CI_Controller {
 			// l'visiteur n'est pas authentifié, on envoie la vue de connexion
 			$data = array();
 			$this->templates->load('t_connexion', 'v_connexion', $data);
+<<< HEAD
 		} 
+=======
+		}
+		elseif($this->session->userdata('statut')!= 'visiteur')
+		{
+			$this->load->helper('url');
+			redirect('/c_default/');
+		}
+>>>>>>> branch 'master' of https://github.com/benoitjean/AppliFrais.git
 		else
 		{
 			// Aiguillage selon l'action demandée
@@ -162,6 +171,9 @@ class C_visiteur extends CI_Controller {
 				show_404();
 			}
 		}
+<<<<<<< HEAD
 		
+=======
+>>>>>>> branch 'master' of https://github.com/benoitjean/AppliFrais.git
 	}
 }

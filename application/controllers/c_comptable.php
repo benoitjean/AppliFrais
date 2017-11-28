@@ -18,7 +18,10 @@ class C_comptable extends CI_Controller {
 	{
 		// chargement du modèle d'authentification
 		$this->load->model('authentif');
+<<< HEAD
 		
+=======
+>>>>>>> branch 'master' of https://github.com/benoitjean/AppliFrais.git
 		// contrôle de la bonne authentification de le comptable
 		if (!$this->authentif->estConnecte())
 		{
@@ -26,7 +29,17 @@ class C_comptable extends CI_Controller {
 			$data = array();
 			$this->templates->load('t_connexion', 'v_connexion', $data);
 		}
+<<<<<<< HEAD
 		else 
+=======
+
+		elseif($this->session->userdata('statut')!= 'comptable')
+		{
+			$this->load->helper('url');
+			redirect('/c_default/');
+		}
+		else
+>>>>>>> branch 'master' of https://github.com/benoitjean/AppliFrais.git
 		{
 			// Aiguillage selon l'action demandée
 			// CI a traité l'URL au préalable de sorte à toujours renvoyer l'action "index"
