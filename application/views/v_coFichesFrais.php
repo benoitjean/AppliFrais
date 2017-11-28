@@ -2,7 +2,7 @@
 	$this->load->helper('url');
 ?>
 <div id="contenu">
-	<h2>Liste des fiches de frais validées</h2>
+	<h2>Liste des fiches de frais validées C'EST v_co</h2>
 
 	<?php if(!empty($notify)) echo '<p id="notify" >'.$notify.'</p>';?>
 
@@ -24,19 +24,18 @@
 				$signeLink = '';
 
 				if ($uneFiche['id'] == 'CL') {
-					$modLink = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'modifier',  'title="Modifier la fiche"');
-					$signeLink = anchor('c_visiteur/signeFiche/'.$uneFiche['mois'], 'signer',  'title="Signer la fiche"  onclick="return confirm(\'Voulez-vous vraiment signer cette fiche ?\');"');
-				}
+
 
 				echo
 				'<tr>
-					<td class="date">'.anchor('c_visiteur/voirFiche/'.$uneFiche['mois'], $uneFiche['mois'],  'title="Consulter la fiche"').'</td>
+					<td class="date">'.anchor('c_comptable/voirFiche/'.$uneFiche['mois'], $uneFiche['mois'],  'title="Consulter la fiche"').'</td>
 					<td class="libelle">'.$uneFiche['libelle'].'</td>
 					<td class="montant">'.$uneFiche['montantValide'].'</td>
 					<td class="date">'.$uneFiche['dateModif'].'</td>
 					<td class="action">'.$modLink.'</td>
 					<td class="action">'.$signeLink.'</td>
 				</tr>';
+				}
 			}
 		?>
 		</tbody>
