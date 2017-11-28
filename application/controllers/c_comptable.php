@@ -18,6 +18,7 @@ class C_comptable extends CI_Controller {
 	{
 		// chargement du modèle d'authentification
 		$this->load->model('authentif');
+		
 		// contrôle de la bonne authentification de le comptable
 		if (!$this->authentif->estConnecte())
 		{
@@ -25,8 +26,9 @@ class C_comptable extends CI_Controller {
 			$data = array();
 			$this->templates->load('t_connexion', 'v_connexion', $data);
 		}
+		 
 
-		elseif($this->session->userdata('statut')!= 'comptable')
+		elseif($this->session->userdata('statut')!= 'comptable') 
 		{
 			$this->load->helper('url');
 			redirect('/c_default/');
@@ -167,6 +169,7 @@ class C_comptable extends CI_Controller {
 			{
 				show_404();
 			}
+			
 		}
 	}
 }

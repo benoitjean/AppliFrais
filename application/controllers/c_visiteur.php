@@ -24,7 +24,7 @@ class C_visiteur extends CI_Controller {
 			// l'visiteur n'est pas authentifié, on envoie la vue de connexion
 			$data = array();
 			$this->templates->load('t_connexion', 'v_connexion', $data);
-		}
+		} 
 		elseif($this->session->userdata('statut')!= 'visiteur')
 		{
 			$this->load->helper('url');
@@ -169,3 +169,5 @@ class C_visiteur extends CI_Controller {
 		}
 	}
 }
+
+	

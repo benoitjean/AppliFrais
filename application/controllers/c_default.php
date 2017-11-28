@@ -41,7 +41,6 @@
                               */
                               public function connecter ()
                               {
-                                // TODO : contrôler que l'obtention des données postées ne rend pas d'erreurs
                                 $this->load->model('authentif');
                                 $login = $this->input->post('login');
                                 $mdp = $this->input->post('mdp');
@@ -57,4 +56,4 @@
                                   $this->index();
                                 }
                             }
-                       }
+                       } 
