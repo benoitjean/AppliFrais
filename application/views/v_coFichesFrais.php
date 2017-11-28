@@ -23,19 +23,19 @@
 				$modLink = '';
 				$signeLink = '';
 
-				if ($uneFiche['id'] == 'CL') {
-					$modLink = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'modifier',  'title="Modifier la fiche"');
-					$signeLink = anchor('c_visiteur/signeFiche/'.$uneFiche['mois'], 'signer',  'title="Signer la fiche"  onclick="return confirm(\'Voulez-vous vraiment signer cette fiche ?\');"');
-				}
-
+				
 				echo
 				'<tr>
-					<td class="date">'.anchor('c_visiteur/voirFiche/'.$uneFiche['mois'], $uneFiche['mois'],  'title="Consulter la fiche"').'</td>
-					<td class="libelle">'.$uneFiche['libelle'].'</td>
+					<td class="Auteur">'.$uneFiche['nom'].'</td>
+					<td class="Auteur">'.$uneFiche['prenom'].'</td>
+
 					<td class="montant">'.$uneFiche['montantValide'].'</td>
-					<td class="date">'.$uneFiche['dateModif'].'</td>
+					<td class="date">'.$uneFiche['dateValid'].'</td>
 					<td class="action">'.$modLink.'</td>
 					<td class="action">'.$signeLink.'</td>
+
+
+
 				</tr>';
 			}
 		?>
