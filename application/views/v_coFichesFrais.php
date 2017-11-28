@@ -2,7 +2,7 @@
 	$this->load->helper('url');
 ?>
 <div id="contenu">
-	<h2>Liste des fiches de frais validées</h2>
+	<h2>Liste des fiches de frais validées C'EST v_co</h2>
 
 	<?php if(!empty($notify)) echo '<p id="notify" >'.$notify.'</p>';?>
 
@@ -24,19 +24,22 @@
 				$signeLink = '';
 
 				
+				if ($uneFiche['id'] == 'CL') {
+
+
 				echo
 				'<tr>
-					<td class="Auteur">'.$uneFiche['nom'].'</td>
-					<td class="Auteur">'.$uneFiche['prenom'].'</td>
+					
 
-					<td class="montant">'.$uneFiche['montantValide'].'</td>
-					<td class="date">'.$uneFiche['dateValid'].'</td>
+					<td class="Auteur">'.$uneFiche['nom'].'</td>
+					<td class="Montant">'.$uneFiche['montantValide'].'</td>
+					<td class="date">'.$uneFiche['dateModif'].'</td>
 					<td class="action">'.$modLink.'</td>
-					<td class="action">'.$signeLink.'</td>
 
 
 
 				</tr>';
+				}
 			}
 		?>
 		</tbody>
