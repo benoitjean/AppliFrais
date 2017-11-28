@@ -20,12 +20,7 @@
 		<?php
 			foreach( $mesFiches as $uneFiche)
 			{
-				$modLink = '';
-				$signeLink = '';
-
 				if ($uneFiche['id'] == 'CL') {
-
-
 				echo
 				'<tr>
 					<td class="date">'.anchor('c_comptable/voirFiche/'.$uneFiche['mois'], $uneFiche['mois'],  'title="Consulter la fiche"').'</td>
