@@ -39,6 +39,7 @@
 					<td class="action">'.$signeLink.'</td>
 				</tr>';
 			}
+		}
 		?>
 		</tbody>
     </table>
