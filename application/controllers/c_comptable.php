@@ -26,7 +26,7 @@ class C_comptable extends CI_Controller {
 			$this->templates->load('t_connexion', 'v_connexion', $data);
 		}
 
-		elseif($this->session->userdata('statut')!= 'comptable')
+		elseif($this->session->userdata('statut')!= 'comptable') 
 		{
 			$this->load->helper('url');
 			redirect('/c_default/');
