@@ -51,7 +51,9 @@ class A_comptable extends CI_Model {
 
 		$data['notify'] = $message;
 		$data['mesFiches'] = $this->dataAccess->getFichesComptableBis();
+		
 		$this->templates->load('t_comptable', 'v_coFichesFrais', $data);
+		
 	}
 
 	/**
