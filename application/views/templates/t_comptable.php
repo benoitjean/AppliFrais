@@ -38,7 +38,7 @@ $v_path = base_url('application/views');
 						Comptable :
 						<?php echo $this->session->userdata('prenom')."  ".$this->session->userdata('nom');  ?>
 					</li>
-
+          <br/>
 					<li class="smenu">
 						<?php echo anchor('c_comptable/', 'Accueil', 'title="Page d\'accueil"'); ?>
 					</li>
