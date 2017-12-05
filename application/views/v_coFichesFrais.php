@@ -17,7 +17,7 @@
 		</thead>
 		<tbody>
 
-		<?php
+		<?php 
 			foreach( $mesFiches as $uneFiche)
 			{
 				$modLink = '';
@@ -30,7 +30,7 @@
 
 
 					<td class="date">'.anchor('c_comptable/voirFiche/'.$uneFiche['mois'], $uneFiche['mois'],  'title="Consulter la fiche"').'</td>
-					<td class="libelle">'.$uneFiche['idVisiteur'].'</td>
+					<td class="libelle">'.$uneFiche['nom']." ".$uneFiche['prenom'].'</td>
 					<td class="Montant">'.$uneFiche['montantValide'].'</td>
 					<td class="date">'.$uneFiche['dateModif'].'</td>
 
