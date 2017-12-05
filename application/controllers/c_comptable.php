@@ -18,7 +18,7 @@ class C_comptable extends CI_Controller {
 	{
 		// chargement du modèle d'authentification
 		$this->load->model('authentif');
-		
+
 		// contrôle de la bonne authentification de le comptable
 		if (!$this->authentif->estConnecte())
 		{
@@ -26,9 +26,9 @@ class C_comptable extends CI_Controller {
 			$data = array();
 			$this->templates->load('t_connexion', 'v_connexion', $data);
 		}
-		 
 
-		elseif($this->session->userdata('statut')!= 'comptable') 
+
+		elseif($this->session->userdata('statut')!= 'comptable')
 		{
 			$this->load->helper('url');
 			redirect('/c_default/');
@@ -165,11 +165,25 @@ class C_comptable extends CI_Controller {
 				// ... et on revient en modification de la fiche
 				$this->a_comptable->modFiche($idComptable, $mois, 'Ligne "Hors forfait" supprimée ...');
 			}
+			elseif ($action == 'acceptFiche') 	// acceptFiche demandé : on active la fonction acceptFiche du modèle comptable ...
+			{	// TODO : contrôler la validité du second paramètre (mois de la fiche à modifier)
+				$this->load->model('a_comptable');
+
+				// obtention du mois de la fiche à signer qui doit avoir été transmis
+				// en second paramètre
+				$mois = $params[0];
+				// obtention de l'id visiteur courant et du mois concerné
+				$idVisiteur = $this->session->userdata('idUser');
+				$this->a_visiteur->signeFiche($idVisiteur, $mois);
+
+				// ... et on revient à mesFiches
+				$this->a_visiteur->mesFiches($idVisiteur, "La fiche $mois a été signée. <br/>Pensez à envoyer vos justificatifs afin qu'elle soit traitée par le service comptable rapidement.");
+			}
 			else								// dans tous les autres cas, on envoie la vue par défaut pour l'erreur 404
 			{
 				show_404();
 			}
-			
+
 		}
 	}
 }
