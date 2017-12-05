@@ -13,11 +13,12 @@
 				<th >Nom Prenom</th>
 				<th >Montant</th>
 				<th >Date valid.</th>
+				<th  colspan="4">Actions</th>
 			</tr>
 		</thead>
 		<tbody>
 
-		<?php 
+		<?php
 			foreach( $mesFiches as $uneFiche)
 			{
 				$modLink = '';
@@ -25,6 +26,9 @@
 
 
 				if ($uneFiche['id'] == 'CL') {
+						$modLink = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'accepter',  'title="Accepter la fiche"');
+						$signeLink = anchor('c_visiteur/signeFiche/'.$uneFiche['mois'], 'refuser',  'title="Refuser la fiche"  onclick="return confirm(\'Voulez-vous vraiment signer cette fiche ?\');"');
+					}
 				echo
 				'<tr>
 
@@ -33,12 +37,13 @@
 					<td class="libelle">'.$uneFiche['nom']." ".$uneFiche['prenom'].'</td>
 					<td class="Montant">'.$uneFiche['montantValide'].'</td>
 					<td class="date">'.$uneFiche['dateModif'].'</td>
-
+					<td class="action">'.$modLink.'</td>
+					<td class="action">'.$signeLink.'</td>
 
 
 				</tr>';
 				}
-			}
+
 		?>
 		</tbody>
     </table>
