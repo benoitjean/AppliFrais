@@ -12,11 +12,7 @@
 				<th>Voir fiche</th>
 				<th >Nom Prenom</th>
 				<th >Montant</th>
-<<<<<<< HEAD
 				<th >Date valid.</th
-=======
-				<th >Date valid.</th>
->>>>>>> d60f18b42fc88be137c6dd552088a20e4c33c082
 				<th  colspan="4">Actions</th>
 			</tr>
 		</thead>
@@ -30,13 +26,6 @@
 
 
 				if ($uneFiche['id'] == 'CL') {
-<<<<<<< HEAD
-=======
-						$modLink = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'accepter',  'title="Accepter la fiche"');
-						$signeLink = anchor('c_visiteur/signeFiche/'.$uneFiche['mois'], 'refuser',  'title="Refuser la fiche"  onclick="return confirm(\'Voulez-vous vraiment signer cette fiche ?\');"');
-					}
-				echo
->>>>>>> d60f18b42fc88be137c6dd552088a20e4c33c082
 				'<tr>
 
 
