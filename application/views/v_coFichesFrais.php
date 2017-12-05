@@ -26,7 +26,7 @@
 
 
 				if ($uneFiche['id'] == 'CL') {
-						$modLink = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'accepter',  'title="Accepter la fiche"');
+						$modLink = anchor('c_comptable/acceptFiche/'.$uneFiche['mois'], 'accepter',  'title="Accepter la fiche"');
 						$signeLink = anchor('c_visiteur/signeFiche/'.$uneFiche['mois'], 'refuser',  'title="Refuser la fiche"  onclick="return confirm(\'Voulez-vous vraiment signer cette fiche ?\');"');
 					}
 				echo
