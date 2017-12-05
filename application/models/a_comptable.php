@@ -70,7 +70,7 @@ class A_comptable extends CI_Model {
 
 		$this->templates->load('t_comptable', 'v_visVoirListeFrais', $data);
 	}
-
+  
 	/**
 	 * Présente le détail de la fiche sélectionnée et donne
 	 * accés à la modification du contenu de cette fiche.
