@@ -2,7 +2,7 @@
 	$this->load->helper('url');
 ?>
 <div id="contenu">
-	<h2>Liste des fiches de frais validées C'EST v_co</h2>
+	<h2>Liste des fiches de frais signées par les visiteurs: </h2>
 
 	<?php if(!empty($notify)) echo '<p id="notify" >'.$notify.'</p>';?>
 
