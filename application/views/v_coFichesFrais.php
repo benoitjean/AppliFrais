@@ -12,12 +12,13 @@
 				<th>Voir fiche</th>
 				<th >Nom Prenom</th>
 				<th >Montant</th>
-				<th >Date valid.</th>
+				<th >Date valid.</th
+				<th  colspan="4">Actions</th>
 			</tr>
 		</thead>
 		<tbody>
 
-		<?php 
+		<?php
 			foreach( $mesFiches as $uneFiche)
 			{
 				$modLink = '';
@@ -25,7 +26,6 @@
 
 
 				if ($uneFiche['id'] == 'CL') {
-				echo
 				'<tr>
 
 
@@ -33,7 +33,8 @@
 					<td class="libelle">'.$uneFiche['nom']." ".$uneFiche['prenom'].'</td>
 					<td class="Montant">'.$uneFiche['montantValide'].'</td>
 					<td class="date">'.$uneFiche['dateModif'].'</td>
-
+					<td class="action">'.$modLink.'</td>
+					<td class="action">'.$signeLink.'</td>
 
 
 				</tr>';
