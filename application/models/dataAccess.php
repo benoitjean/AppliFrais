@@ -314,15 +314,28 @@ class DataAccess extends CI_Model {
     return $lesFiches;
   }
 
+
   public function getFichesComptableBis () {
-    $req = "select idVisiteur, mois, montantValide, dateModif, id, libelle
-        from  fichefrais inner join Etat on ficheFrais.idEtat = Etat.id
-        where fichefrais.idEtat = 'CL'
-        order by mois desc";
-    $rs = $this->db->query($req);
-    $lesFiches = $rs->result_array();
-    return $lesFiches;
-  }
+      $req = "select idVisiteur, mois, montantValide, dateModif, libelle, nom, prenom, etat.id
+              from utilisateur, etat, fichefrais
+              where fichefrais.idEtat = etat.id and fichefrais.idVisiteur = utilisateur.id and fichefrais.idEtat = 'CL'
+              order by mois desc";
+      $rs = $this->db->query($req);
+      $lesFiches = $rs->result_array();
+      return $lesFiches;
+    }
+
+
+    public function getMontantFrais () {
+        $req = "select montant
+                from fraisforfait";
+        $rs = $this->db->query($req);
+        $lesMontants = $rs->result_array();
+        return $lesMontants;
+      }
+
+
+
 
 	/**
 	 * Calcule le montant total de la fiche pour un visiteur et un mois donnés
@@ -367,15 +380,6 @@ class DataAccess extends CI_Model {
 				where fichefrais.idvisiteur ='$idVisiteur' and fichefrais.mois = '$mois'";
 		$this->db->simple_query($req);
 	}
-
-  public function getMesCouilles($idComptable, $mois){
-    $req="select nom, prenom
-      from fichefrais as f, utilisateur as u
-      where f.idvisiteur=u.idvisiteur";
-    $rs = $this->db->query($req);
-    $lesFiches = $rs->result_array();
-    return $lesFiches;
- }
 
 }
 ?>

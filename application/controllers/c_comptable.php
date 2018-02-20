@@ -18,7 +18,8 @@ class C_comptable extends CI_Controller {
 	{
 		// chargement du modèle d'authentification
 		$this->load->model('authentif');
-
+		$this->load->model('a_comptable');
+		$this->load->model('a_visiteur');
 		// contrôle de la bonne authentification de le comptable
 		if (!$this->authentif->estConnecte())
 		{
