@@ -1,3 +1,4 @@
+
 <?php
 	$this->load->helper('url');
 ?>
@@ -12,6 +13,10 @@
 
 			<fieldset>
 				<legend>Eléments forfaitisés</legend>
+				<strong class="jvs">Quantité</strong>
+				<strong class="jvs">Montant</strong>
+				<strong class="jvs">Total</strong>
+
 				<?php
 			
 					foreach ($lesFraisForfait as $unFrais)
